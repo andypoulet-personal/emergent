@@ -156,6 +156,74 @@ export default function CompanyDetail() {
         </section>
       )}
 
+      {/* Case Studies (if available) */}
+      {company.caseStudies && company.caseStudies.length > 0 && (
+        <section className="case-studies-section">
+          <div className="container">
+            <h2 className="heading-4" style={{ marginBottom: '48px', textAlign: 'center', color: 'var(--text-primary)' }}>
+              Success Stories
+            </h2>
+            <div className="case-studies-list">
+              {company.caseStudies.map((caseStudy, index) => (
+                <Card key={index} className="case-study-card">
+                  <div className="case-study-image-container">
+                    <img 
+                      src={caseStudy.image} 
+                      alt={caseStudy.title}
+                      className="case-study-image"
+                    />
+                  </div>
+                  <CardContent style={{ padding: '40px' }}>
+                    <h3 className="heading-5" style={{ marginBottom: '24px', color: 'var(--text-primary)' }}>
+                      {caseStudy.title}
+                    </h3>
+                    
+                    <div className="case-study-section">
+                      <h4 className="case-study-label">Challenge</h4>
+                      <p className="body-small" style={{ marginBottom: '20px' }}>
+                        {caseStudy.challenge}
+                      </p>
+                    </div>
+                    
+                    <div className="case-study-section">
+                      <h4 className="case-study-label">Solution</h4>
+                      <p className="body-small" style={{ marginBottom: '20px' }}>
+                        {caseStudy.solution}
+                      </p>
+                    </div>
+                    
+                    {caseStudy.results && (
+                      <div className="case-study-section">
+                        <h4 className="case-study-label">Results</h4>
+                        <ul className="case-study-results">
+                          {caseStudy.results.map((result, idx) => (
+                            <li key={idx} className="body-small">
+                              <Check style={{ width: '20px', height: '20px', color: 'var(--brand-primary)', marginRight: '12px', flexShrink: 0 }} />
+                              {result}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {caseStudy.testimonial && (
+                      <div className="case-study-testimonial">
+                        <p className="body-small" style={{ fontStyle: 'italic', marginBottom: '12px' }}>
+                          "{caseStudy.testimonial.quote}"
+                        </p>
+                        <p className="caption" style={{ color: 'var(--text-primary)' }}>
+                          — {caseStudy.testimonial.author}, {caseStudy.testimonial.role}
+                        </p>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
