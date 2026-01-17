@@ -442,6 +442,18 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-content h2 {
+  text-align: center;
+}
+
+.cta-content p {
+  text-align: center;
 }
 
 /* Footer Styles */
