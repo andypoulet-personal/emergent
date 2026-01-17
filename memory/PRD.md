@@ -57,6 +57,7 @@ Create a personal business website for Andy Poulet to showcase who he is, what h
    - Products & Services grid
    - Key features list
    - Industries served
+   - **Case Studies/Success Stories section** (NEW)
    - Testimonials (where available)
    - CTA to contact
    
@@ -81,6 +82,11 @@ Create a personal business website for Andy Poulet to showcase who he is, what h
 - **Mock Data** (`/app/frontend/src/data/mock.js`)
   - Personal information for Andy
   - Company details (4 companies)
+  - **10+ case studies across all companies** (NEW)
+    - WristCoin: 3 case studies (Hollerbach Oktoberfest, Oasiz Mall, Aniwa Gathering)
+    - conCHAIRto: 2 case studies (Festival Safety, Major Festival Partnerships)
+    - FanIQ One: 2 case studies (Sports Team Campaigns, Live Event Targeting)
+    - FanOS: 3 case studies (Auburn Athletics, Aloompa Events, Syncing Calendar)
   - Contact form configuration
   - All content scraped from company websites
 
@@ -189,5 +195,5 @@ Create a personal business website for Andy Poulet to showcase who he is, what h
 
 ---
 
-**Last Updated:** January 17, 2025
-**Status:** Phase 1 Complete - Frontend with Mock Data ✅
+**Last Updated:** January 17, 2025 (Updated with Case Studies)
+**Status:** Phase 1 Complete - Frontend with Mock Data + Case Studies ✅
