@@ -63,6 +63,50 @@ export const companies = [
         author: "Rory B",
         company: "St. Francis Episcopal School Houston"
       }
+    ],
+    caseStudies: [
+      {
+        title: "Hollerbach Oktoberfest",
+        image: "https://images.unsplash.com/photo-1633613286991-611fe299c4be?crop=entropy&cs=srgb&fm=jpg&q=85",
+        challenge: "The Hollerbach Oktoberfest, a popular annual event in Florida attracting thousands of visitors, faced significant operational challenges including long lines, delays for attendees, and difficulties in tracking sales and revenue accurately with their ticket-based system.",
+        solution: "After implementing WristCoin's cashless payment solution, the event organizers were able to eliminate bottlenecks and streamline operations with NFC wristbands.",
+        results: [
+          "Dramatically reduced wait times at bars and vendors",
+          "Real-time sales tracking and comprehensive reporting",
+          "Improved guest experience with faster transactions",
+          "Increased sales through faster service"
+        ]
+      },
+      {
+        title: "Oasiz Mall Madrid",
+        image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?crop=entropy&cs=srgb&fm=jpg&q=85",
+        challenge: "Oasiz Mall, a luxury suburban mall in Madrid, needed a seamless cashless solution for its year-round amusement park activities that could handle high volume transactions without requiring complex app downloads or user registration.",
+        solution: "WristCoin's user-friendly self-serve top-up system with no app or username required impressed the mall management. The solution provided a frictionless experience for visitors.",
+        results: [
+          "Fleet of mPOS terminals managing all park sales",
+          "Self-serve top-up stations with no app required",
+          "Integrated banking services ensuring regular payouts",
+          "Seamless guest experience for year-round operations"
+        ]
+      },
+      {
+        title: "Aniwa Gathering",
+        image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?crop=entropy&cs=srgb&fm=jpg&q=85",
+        challenge: "The organizing team behind Aniwa Gathering faced a unique challenge: hosting a cashless event in the remote wilderness of Big Bear, California, several hours from Los Angeles. With no reliable internet or mobile data service available except satellite internet at the central station, they needed a cashless solution that could work offline.",
+        solution: "WristCoin's offline transaction capability was the perfect solution. The system could process payments without internet connectivity, syncing data when connection was available.",
+        results: [
+          "Successful cashless event in remote wilderness location",
+          "Offline transaction processing guaranteed balance accuracy",
+          "Vendor sales increased due to ease of payment",
+          "Saved money on internet infrastructure across the site",
+          "Beautifully printed wristbands delivered on time"
+        ],
+        testimonial: {
+          quote: "The WristCoin team were attentive and available throughout pre production and our event itself. The wristbands were printed beautifully and delivered on time. Our vendors' sales went up due to ease of payment. We saved money on internet access across site due to the ability to operate transactions without wifi/service. Affordable, consistent and reliable",
+          author: "Victoria Keon-Cohen",
+          role: "Aniwa Gathering Producer"
+        }
+      }
     ]
   },
   {
@@ -109,6 +153,34 @@ export const companies = [
       "Monterey Jazz Festival",
       "Rock The Country",
       "Honeyland Festival"
+    ],
+    caseStudies: [
+      {
+        title: "Festival Safety & Security Enhancement",
+        image: "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?crop=entropy&cs=srgb&fm=jpg&q=85",
+        challenge: "Music festivals were experiencing security bottlenecks as attendees brought personal chairs that needed thorough searches. This created long entry lines and potential safety risks from contraband hidden in chair frames and cushions.",
+        solution: "conCHAIRto implemented a pre-reserved chair rental system that eliminates the need for personal chairs. Attendees order online, pick up their chairs after security, and drop them off at designated zones when leaving.",
+        results: [
+          "Faster security processing with fewer items to search",
+          "Reduced contraband smuggling incidents",
+          "Improved space utilization within festival grounds",
+          "Enhanced guest experience with quality, comfortable seating",
+          "Additional revenue stream for festival organizers"
+        ]
+      },
+      {
+        title: "Major Festival Partnership Success",
+        image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?crop=entropy&cs=srgb&fm=jpg&q=85",
+        challenge: "Large-scale festivals like Rock The South and Monterey Jazz Festival needed a logistics solution that could handle thousands of chair rentals while maintaining quality and eliminating the hassle for attendees traveling from out of town.",
+        solution: "conCHAIRto's turnkey approach provides complete logistics management with online ordering, early bird discounts ($15 vs $20), multiple color options for visibility, and convenient drop-off zones throughout the venue.",
+        results: [
+          "Successfully serving major festivals including Rock The South and Blue Note Jazz Fest",
+          "High customer satisfaction with 350lbs weight capacity chairs",
+          "Revenue-sharing model creating win-win partnerships",
+          "Streamlined operations for festival organizers",
+          "Enhanced brand visibility with custom color options"
+        ]
+      }
     ]
   },
   {
@@ -156,6 +228,34 @@ export const companies = [
       "HubSpot",
       "Mailchimp",
       "Laylo"
+    ],
+    caseStudies: [
+      {
+        title: "Sports Team Ticket Sales Campaign",
+        image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?crop=entropy&cs=srgb&fm=jpg&q=85",
+        challenge: "Sports teams were managing separate advertising campaigns across Facebook, Instagram, Snapchat, and TikTok using different platforms, leading to fragmented data, inconsistent messaging, and difficulty tracking which platforms drove actual ticket sales.",
+        solution: "FanIQ One unified all social advertising into a single dashboard with direct ticketing integrations. Teams could create campaigns once, deploy across all platforms, and track performance with unified reporting tied directly to ticket sales.",
+        results: [
+          "Single dashboard replacing 4+ separate platforms",
+          "Direct attribution from ad spend to ticket sales",
+          "Reduced campaign creation time by 60%",
+          "Improved ROAS with unified audience insights",
+          "Real-time inventory updates across all platforms"
+        ]
+      },
+      {
+        title: "Live Event Audience Targeting",
+        image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?crop=entropy&cs=srgb&fm=jpg&q=85",
+        challenge: "Concert promoters struggled to reach the right audiences for niche events. Generic social media targeting resulted in wasted ad spend and low conversion rates. They needed access to pre-built lifestyle audiences interested in specific event types.",
+        solution: "FanIQ One's platform includes pre-built lifestyle audiences combined with custom audience building tools. Promoters could target known fans, lookalike audiences, and specialized interest groups across all major social platforms simultaneously.",
+        results: [
+          "Higher conversion rates with better audience targeting",
+          "Access to pre-built lifestyle audiences for live events",
+          "Reduced cost per ticket acquisition",
+          "Increased event sellout rates",
+          "Better ROI on social advertising spend"
+        ]
+      }
     ]
   },
   {
@@ -209,9 +309,57 @@ export const companies = [
     ],
     testimonials: [
       {
-        quote: "The customization and personalization for the user is truly a first-class experience.",
+        quote: "The customization and personalization for the user is truly a first-class experience. As exciting as this launch is, it represents only the beginning of what's to come as we will constantly add more features during this partnership.",
         author: "Daniel Watkins",
-        company: "Auburn Senior Associate AD"
+        company: "Auburn Senior Associate AD of Marketing & Revenue Generation"
+      }
+    ],
+    caseStudies: [
+      {
+        title: "Auburn Athletics Digital Transformation",
+        image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?crop=entropy&cs=srgb&fm=jpg&q=85",
+        challenge: "Auburn Athletics needed a comprehensive digital platform that could engage fans across multiple touchpoints - website, mobile apps, and connected TV devices - while maintaining brand consistency and providing personalized experiences for thousands of fans.",
+        solution: "WMT.Digital's FanOS platform provided a complete ecosystem including a custom team website, native mobile apps for iOS and Android, and Smart TV applications for Roku, Apple TV, and Amazon Fire. All platforms shared unified authentication and content management.",
+        results: [
+          "First-class personalized user experience across all devices",
+          "Unified platform with cross-device authentication",
+          "99.9% uptime for critical game days",
+          "Seamless integration with existing Auburn systems",
+          "Foundation for ongoing feature development and innovation"
+        ],
+        testimonial: {
+          quote: "The customization and personalization for the user is truly a first-class experience. As exciting as this launch is, it represents only the beginning of what's to come as we will constantly add more features during this partnership.",
+          author: "Daniel Watkins",
+          role: "Auburn Senior Associate AD of Marketing & Revenue Generation"
+        }
+      },
+      {
+        title: "Event Mobile App with Aloompa",
+        image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?crop=entropy&cs=srgb&fm=jpg&q=85",
+        challenge: "Large-scale events needed a comprehensive mobile app solution that could handle interactive maps, personalized schedules, push notifications, and in-app advertising while providing robust analytics - all while ensuring the app performed flawlessly with thousands of simultaneous users.",
+        solution: "WMT.Digital's Aloompa event platform provides a white-label mobile app solution with all essential event features. Attendees get customizable schedules, interactive venue maps, real-time updates, and personalized recommendations.",
+        results: [
+          "Enhanced live event experience for all attendees",
+          "Customizable schedules for personalized planning",
+          "Interactive maps reducing attendee confusion",
+          "In-app advertising creating new revenue opportunities",
+          "Comprehensive analytics for event organizers",
+          "Push notifications for real-time event updates"
+        ]
+      },
+      {
+        title: "Syncing Calendar Technology",
+        image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?crop=entropy&cs=srgb&fm=jpg&q=85",
+        challenge: "During the pandemic, event schedules became highly fluid with constant changes to times, locations, and virtual/in-person formats. Traditional calendar solutions couldn't automatically update events already saved to attendees' personal calendars, causing confusion and missed events.",
+        solution: "WMT.Digital developed a unique syncing calendar app that maintains a master schedule and automatically updates events on fans' devices when details change. The solution supports Apple Calendar, Google Calendar, Outlook, and other major platforms.",
+        results: [
+          "Automatic event updates synced to personal calendars",
+          "Eliminated confusion from schedule changes",
+          "Easy-to-use CMS for schedule management",
+          "Embeddable widgets for external website integration",
+          "Support for all major calendar platforms",
+          "Reduced no-shows from outdated event information"
+        ]
       }
     ]
   }
