@@ -58,7 +58,37 @@ export default function Home() {
       {/* Companies Section */}
       <section className="companies-section">
         <div className="container">
-          <h2 className="heading-4" style={{ marginBottom: '48px', textAlign: 'center', color: 'var(--text-primary)' }}>
+          {/* Banner showcasing services */}
+          <div className="companies-banner">
+            <div className="companies-banner-grid">
+              <div className="banner-image-item">
+                <img src="https://images.unsplash.com/photo-1568952433726-3896e3881c65?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Cashless Payment Technology" />
+                <div className="banner-overlay">
+                  <span className="banner-label">Cashless Payments</span>
+                </div>
+              </div>
+              <div className="banner-image-item">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Event & Festival Management" />
+                <div className="banner-overlay">
+                  <span className="banner-label">Event Management</span>
+                </div>
+              </div>
+              <div className="banner-image-item">
+                <img src="https://images.unsplash.com/photo-1760037028485-d00dd2b8f6f0?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Sports Marketing" />
+                <div className="banner-overlay">
+                  <span className="banner-label">Sports Marketing</span>
+                </div>
+              </div>
+              <div className="banner-image-item">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Fan Engagement Technology" />
+                <div className="banner-overlay">
+                  <span className="banner-label">Fan Engagement</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <h2 className="heading-4" style={{ marginBottom: '48px', marginTop: '64px', textAlign: 'center', color: 'var(--text-primary)' }}>
             Companies I Work With
           </h2>
           <div className="pixel-pushers-grid">
