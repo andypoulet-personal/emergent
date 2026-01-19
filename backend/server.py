@@ -45,6 +45,7 @@ class Newsletter(BaseModel):
     title: str
     preview_text: str
     full_content: str
+    featured_image: str = ""  # Main hero image URL
     linkedin_url: str
     publish_date: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     author_name: str = "Andy Poulet"
@@ -54,6 +55,7 @@ class NewsletterCreate(BaseModel):
     title: str
     preview_text: str
     full_content: str
+    featured_image: str = ""
     linkedin_url: str
     tags: List[str] = Field(default_factory=list)
 

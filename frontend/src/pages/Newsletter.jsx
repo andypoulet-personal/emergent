@@ -166,6 +166,34 @@ function NewsletterDetail({ newsletter, onBack }) {
     });
   };
 
+  const formatContent = (content) => {
+    if (!content) return '';
+    
+    let formatted = content;
+    
+    // Convert bold: **text** to <strong>
+    formatted = formatted.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    
+    // Convert italic: *text* or _text_ to <em>
+    formatted = formatted.replace(/\*(.+?)\*/g, '<em>$1</em>');
+    formatted = formatted.replace(/_(.+?)_/g, '<em>$1</em>');
+    
+    // Convert blockquotes: > text to styled blockquote
+    formatted = formatted.replace(/^> (.+)$/gm, '<blockquote class="newsletter-quote">$1</blockquote>');
+    
+    // Convert images: ![alt](url) to <img>
+    formatted = formatted.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="newsletter-image" />');
+    
+    // Convert YouTube embeds: [youtube](video_id) to iframe
+    formatted = formatted.replace(/\[youtube\]\(([^)]+)\)/g, 
+      '<div class="newsletter-video-container"><iframe src="https://www.youtube.com/embed/$1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="newsletter-video"></iframe></div>');
+    
+    // Convert line breaks
+    formatted = formatted.replace(/\n/g, '<br />');
+    
+    return formatted;
+  };
+
   return (
     <div className="newsletter-detail-page">
       <section className="newsletter-detail-hero">
@@ -211,10 +239,15 @@ function NewsletterDetail({ newsletter, onBack }) {
       <section className="newsletter-content-section">
         <div className="container">
           <Card className="newsletter-content-card">
+            {newsletter.featured_image && (
+              <div className="newsletter-featured-image">
+                <img src={newsletter.featured_image} alt={newsletter.title} />
+              </div>
+            )}
             <CardContent style={{ padding: '48px' }}>
               <div 
                 className="newsletter-content"
-                dangerouslySetInnerHTML={{ __html: newsletter.full_content.replace(/\n/g, '<br />') }}
+                dangerouslySetInnerHTML={{ __html: formatContent(newsletter.full_content) }}
               />
             </CardContent>
           </Card>

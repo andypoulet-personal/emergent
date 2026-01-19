@@ -1109,3 +1109,62 @@ body {
 .newsletter-content p {
   margin-bottom: 1.5em;
 }
+
+.newsletter-content strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.newsletter-content em {
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.newsletter-featured-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.newsletter-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.newsletter-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 24px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-quote {
+  border-left: 4px solid var(--brand-primary);
+  padding: 16px 24px;
+  margin: 24px 0;
+  background: rgba(16, 137, 62, 0.1);
+  font-style: italic;
+  color: var(--text-primary);
+  font-size: 1.15rem;
+}
+
+.newsletter-video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin: 24px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

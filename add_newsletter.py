@@ -26,9 +26,9 @@ async def add_newsletter():
         print("   Make sure /app/backend/.env file exists with these variables")
         sys.exit(1)
     
-    print("\n" + "="*60)
+    print("\n" + "="*70)
     print("  ADD NEW NEWSLETTER - Andy Poulet Website")
-    print("="*60 + "\n")
+    print("="*70 + "\n")
     
     title = input("📰 Newsletter Title: ").strip()
     if not title:
@@ -40,8 +40,19 @@ async def add_newsletter():
         print("❌ Preview text cannot be empty")
         sys.exit(1)
     
-    print("\n📄 Full Content (type your content, press Ctrl+D when finished):")
-    print("   Tip: Use **text** for bold, and blank lines for paragraphs\n")
+    featured_image = input("\n🖼️  Featured Image URL (optional, press Enter to skip): ").strip()
+    
+    print("\n" + "="*70)
+    print("📄 FULL CONTENT - Formatting Guide:")
+    print("="*70)
+    print("  **bold text**           - Bold text")
+    print("  *italic text*           - Italic text")
+    print("  > Quote text            - Block quote (start line with >)")
+    print("  ![alt](image-url)       - Insert image")
+    print("  [youtube](video-id)     - Embed YouTube video")
+    print("="*70)
+    print("\nType your content below, press Ctrl+D (Mac/Linux) or Ctrl+Z then Enter (Windows) when finished:\n")
+    
     lines = []
     try:
         while True:
@@ -70,6 +81,7 @@ async def add_newsletter():
         "title": title,
         "preview_text": preview_text,
         "full_content": full_content,
+        "featured_image": featured_image if featured_image else "",
         "linkedin_url": linkedin_url if linkedin_url else "",
         "publish_date": datetime.utcnow().isoformat(),
         "author_name": "Andy Poulet",
@@ -79,15 +91,16 @@ async def add_newsletter():
     # Insert into database
     try:
         await db.newsletters.insert_one(newsletter)
-        print("\n" + "="*60)
+        print("\n" + "="*70)
         print("✅ Newsletter Published Successfully!")
-        print("="*60)
+        print("="*70)
         print(f"   Title: {newsletter['title']}")
         print(f"   ID: {newsletter['_id']}")
         print(f"   Date: {datetime.fromisoformat(newsletter['publish_date']).strftime('%B %d, %Y')}")
+        print(f"   Featured Image: {'Yes' if featured_image else 'No'}")
         print(f"   Tags: {', '.join(tags) if tags else 'None'}")
         print("\n   View at: http://localhost:3000/newsletter")
-        print("="*60 + "\n")
+        print("="*70 + "\n")
     except Exception as e:
         print(f"\n❌ Error adding newsletter: {e}")
         sys.exit(1)
