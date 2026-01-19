@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Check } from 'lucide-react';
 import { companies } from '../data/mock';
@@ -8,6 +8,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 export default function CompanyDetail() {
   const { companyId } = useParams();
   const company = companies.find(c => c.id === companyId);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [companyId]);
 
   if (!company) {
     return (
