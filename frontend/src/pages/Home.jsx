@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin } from 'lucide-react';
-import { personalInfo, companies } from '../data/mock';
+import { personalInfo, companies, recommendations } from '../data/mock';
 import { Button } from '../components/ui/button';
+import { Card, CardContent } from '../components/ui/card';
 
 export default function Home() {
   return (
@@ -121,6 +122,48 @@ export default function Home() {
             <Link to="/contact">
               <Button className="btn-primary">Schedule a Call</Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Recommendations Section */}
+      <section className="home-recommendations-section">
+        <div className="container">
+          <h2 className="heading-4" style={{ marginBottom: '48px', textAlign: 'center', color: 'var(--text-primary)' }}>
+            What People Say
+          </h2>
+          <div className="recommendations-grid">
+            {recommendations.map((rec, index) => (
+              <Card key={index} className="recommendation-card">
+                <CardContent style={{ padding: '32px' }}>
+                  <div className="recommendation-header">
+                    <img 
+                      src={rec.image} 
+                      alt={rec.name}
+                      className="recommendation-avatar"
+                    />
+                    <div className="recommendation-info">
+                      <h3 className="heading-6" style={{ color: 'var(--text-primary)', marginBottom: '4px' }}>
+                        {rec.name}
+                      </h3>
+                      <p className="caption" style={{ marginBottom: '2px' }}>
+                        {rec.title}
+                      </p>
+                      <p className="caption" style={{ color: 'var(--brand-primary)' }}>
+                        {rec.company}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="body-small" style={{ marginTop: '20px', lineHeight: '1.7' }}>
+                    "{rec.text.substring(0, 200)}..."
+                  </p>
+                  <Link to="/about" className="read-more-link">
+                    <span className="link-text">Read Full Recommendation</span>
+                    <ArrowRight style={{ width: '16px', height: '16px', marginLeft: '8px' }} />
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

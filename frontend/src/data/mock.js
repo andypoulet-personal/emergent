@@ -9,10 +9,60 @@ export const personalInfo = {
     career: "Throughout my career, I've focused on strategic business development, forging partnerships that create value for all stakeholders. My experience spans the technology, events, and fintech sectors, where I've helped companies expand their reach and maximize their potential.",
     current: "Today, I work with four exceptional companies at the forefront of their industries - from cashless payment solutions and event logistics to sports marketing and fan engagement platforms. Each partnership represents my commitment to innovation and excellence in business development."
   },
+  about: {
+    headline: "Seasoned Entrepreneur, Advisor & Strategic Connector",
+    summary: "I am a seasoned entrepreneur, advisor, and strategic connector with over 25 years of experience pioneering online businesses and building deep expertise in two distinct, yet equally dynamic, industries: the Global Music Festival & Event ecosystem and E-commerce/Workplace Design.",
+    philosophy: "I am a self-starter. If I do not know or understand how things work, I find out! This drive led me to become an e-commerce pioneer in the UK and a major resource in the international festival industry.",
+    expertise: [
+      {
+        title: "Festival & Events Ecosystem Expert",
+        subtitle: "Advisor | Connector | Data Curator",
+        description: "Leveraging extensive industry knowledge and contacts, I specialise in connecting innovative technologies and brands with the global event market.",
+        highlights: [
+          "Global Event Authority: Created and curated a database of over 5,000+ music festivals worldwide, a powerful resource for consulting and strategic brand-festival alignment",
+          "Strategic Advisory: Serve on Advisory Boards for cutting-edge solutions like WristCoin (cashless POS systems) and conCHAIRto (on-site chair rentals), focusing on enhancing the fan experience, safety, and operational efficiency",
+          "Full-Service Consulting: Manage multiple solutions for festivals, acting as a single point of contact for RFID/Cashless, ticketing, travel/accommodation, partnerships, and leveraging my network to reach 1 million+ qualified fans",
+          "Founder: Successfully developed and rebranded Ultimate Festival Guide into Ultimate Festivals 4 All and the parent company, IPAP Ultimate Holdings, which includes multi-faceted event and travel platforms"
+        ]
+      }
+    ]
+  },
   linkedIn: "https://www.linkedin.com/in/andypoulet/",
   email: "contact@andypoulet.com",
   calendlyUrl: "https://calendly.com/andypoulet"
 };
+
+export const recommendations = [
+  {
+    name: "Scott Witters",
+    title: "Founder",
+    company: "Glownet",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=srgb&fm=jpg&q=85",
+    text: "I first connected with Andy shortly after founding Glownet, when we were expanding from Australia and New Zealand into Europe and the US. We needed strong industry insight across festivals, live events, marketing, and the technologies supporting them.\n\nAndy brought exactly that. With his deep knowledge of the global festivals and events market and his extensive international network, he helped us quickly build credibility and become a trusted partner to festivals and events in over 25 countries. His input went well beyond technology, covering positioning, partnerships, go-to-market strategy, and how to engage the right decision-makers.\n\nI have continued to rely on Andy's perspective over the years, and he is currently acting as an advisor to me and my current venture, Samachi. I would highly recommend speaking with Andy if you are operating in festivals, live entertainment, ticketing, or adjacent sectors and are looking for experienced, commercially minded advisory support."
+  },
+  {
+    name: "Brett Smiley",
+    title: "Founder",
+    company: "conCHAIRto",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&q=85",
+    text: "Andy is an ultimate professional in the music festival industry. His knowledge of ticketing, production, operations, tied together with his vast network of connections make him a valued asset and consultant. I recommend Andy to anyone looking to increase their exposure, optimize their event experience, or create introductions."
+  },
+  {
+    name: "Dave Shalaby",
+    title: "Founder",
+    company: "WristCoin",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=srgb&fm=jpg&q=85",
+    text: "Andy has been a fantastic advisor for me, always available and is really well connected in festivals and tourism. He's made several key introductions resulting in new growth opportunities. I love corresponding over email which helps me really craft ideas that become the foundations of strategies moving forward!"
+  },
+  {
+    name: "Chris J Reed",
+    title: "Founder",
+    company: "Black Marketing",
+    date: "February 27th 2020",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=srgb&fm=jpg&q=85",
+    text: "Andy is an inspiring entrepreneur whom I have known for 30 years. We both started our trade in the marketing and management world at The Legendary Hammersmith Odeon concert venue in London. From there we have worked together on numerous projects and marketing initiatives.\n\nWe have also built up a great relationship of mutual sounding boards for new ideas and initiatives and Andy is always fantastic at pointing out my mistakes on LinkedIn which I actually love! Andy is someone you want to work with and want on your team, he'll enhance any company and tell it like it is.\n\nI couldn't recommend Andy high enough, he's a rock star!"
+  }
+];
 
 export const companies = [
   {
