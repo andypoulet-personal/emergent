@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin } from 'lucide-react';
 import { personalInfo, companies, recommendations } from '../data/mock';
@@ -6,6 +6,10 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 
 export default function Home() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="home-page">
       {/* Hero Section - Dynamic Multi-Image */}
@@ -29,10 +33,19 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-content-center">
-          <h1 className="hero-title-large">{personalInfo.name}</h1>
-          <p className="hero-subtitle">
-            {personalInfo.tagline}
-          </p>
+          <div className="hero-profile-container">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_631ef5d9-316a-465b-9301-e2f07b343e3c/artifacts/t1z5cpon_andy-jacket-shirt-office-2.jpeg" 
+              alt="Andy Poulet"
+              className="hero-profile-photo"
+            />
+            <div className="hero-text-content">
+              <h1 className="hero-title-large">{personalInfo.name}</h1>
+              <p className="hero-subtitle">
+                {personalInfo.tagline}
+              </p>
+            </div>
+          </div>
           <div className="hero-buttons">
             <Link to="/contact">
               <Button className="btn-primary">Get In Touch</Button>
