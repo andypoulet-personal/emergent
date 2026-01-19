@@ -37,29 +37,28 @@ export const recommendations = [
     name: "Scott Witters",
     title: "Founder",
     company: "Glownet",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://customer-assets.emergentagent.com/job_631ef5d9-316a-465b-9301-e2f07b343e3c/artifacts/yhvqqm3v_scott-witters.jpg",
     text: "I first connected with Andy shortly after founding Glownet, when we were expanding from Australia and New Zealand into Europe and the US. We needed strong industry insight across festivals, live events, marketing, and the technologies supporting them.\n\nAndy brought exactly that. With his deep knowledge of the global festivals and events market and his extensive international network, he helped us quickly build credibility and become a trusted partner to festivals and events in over 25 countries. His input went well beyond technology, covering positioning, partnerships, go-to-market strategy, and how to engage the right decision-makers.\n\nI have continued to rely on Andy's perspective over the years, and he is currently acting as an advisor to me and my current venture, Samachi. I would highly recommend speaking with Andy if you are operating in festivals, live entertainment, ticketing, or adjacent sectors and are looking for experienced, commercially minded advisory support."
   },
   {
     name: "Brett Smiley",
     title: "Founder",
     company: "conCHAIRto",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://customer-assets.emergentagent.com/job_631ef5d9-316a-465b-9301-e2f07b343e3c/artifacts/r9bxvzq9_brett-smiley.jpg",
     text: "Andy is an ultimate professional in the music festival industry. His knowledge of ticketing, production, operations, tied together with his vast network of connections make him a valued asset and consultant. I recommend Andy to anyone looking to increase their exposure, optimize their event experience, or create introductions."
   },
   {
     name: "Dave Shalaby",
     title: "Founder",
     company: "WristCoin",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://customer-assets.emergentagent.com/job_631ef5d9-316a-465b-9301-e2f07b343e3c/artifacts/ux1p6n3t_dave-shalaby.jpg",
     text: "Andy has been a fantastic advisor for me, always available and is really well connected in festivals and tourism. He's made several key introductions resulting in new growth opportunities. I love corresponding over email which helps me really craft ideas that become the foundations of strategies moving forward!"
   },
   {
     name: "Chris J Reed",
     title: "Founder",
     company: "Black Marketing",
-    date: "February 27th 2020",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://customer-assets.emergentagent.com/job_631ef5d9-316a-465b-9301-e2f07b343e3c/artifacts/ccyifj92_chris-j-Reed.png",
     text: "Andy is an inspiring entrepreneur whom I have known for 30 years. We both started our trade in the marketing and management world at The Legendary Hammersmith Odeon concert venue in London. From there we have worked together on numerous projects and marketing initiatives.\n\nWe have also built up a great relationship of mutual sounding boards for new ideas and initiatives and Andy is always fantastic at pointing out my mistakes on LinkedIn which I actually love! Andy is someone you want to work with and want on your team, he'll enhance any company and tell it like it is.\n\nI couldn't recommend Andy high enough, he's a rock star!"
   }
 ];

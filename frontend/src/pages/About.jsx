@@ -11,10 +11,10 @@ export default function About() {
       {/* Hero Section */}
       <section className="about-hero">
         <div className="container">
-          <h1 className="heading-2" style={{ color: 'var(--text-primary)', marginBottom: '24px' }}>
+          <h1 className="heading-2" style={{ color: 'var(--text-primary)', marginBottom: '16px', textAlign: 'center' }}>
             About Andy Poulet
           </h1>
-          <p className="body-large" style={{ maxWidth: '70ch', marginBottom: '32px' }}>
+          <p className="body-large" style={{ maxWidth: '70ch', margin: '0 auto', textAlign: 'center' }}>
             {personalInfo.about.headline}
           </p>
         </div>
