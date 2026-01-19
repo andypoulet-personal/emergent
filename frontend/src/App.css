@@ -794,6 +794,30 @@ body {
   gap: 8px;
 }
 
+.form-field label {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.form-field input,
+.form-field textarea {
+  color: #ffffff;
+  background: var(--bg-page);
+  border: 1px solid var(--border-light);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  color: #ffffff;
+  background: var(--bg-page);
+  border-color: var(--brand-primary);
+}
+
 .calendly-widget-container {
   background: var(--bg-light);
   border-radius: 8px;
