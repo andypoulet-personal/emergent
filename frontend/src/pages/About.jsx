@@ -11,6 +11,13 @@ export default function About() {
       {/* Hero Section */}
       <section className="about-hero">
         <div className="container">
+          <div className="about-hero-photo">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_631ef5d9-316a-465b-9301-e2f07b343e3c/artifacts/75tx5pnl_andy-santa-barbara-suit-shirt.jpg" 
+              alt="Andy Poulet"
+              className="profile-photo"
+            />
+          </div>
           <h1 className="heading-2" style={{ color: 'var(--text-primary)', marginBottom: '16px', textAlign: 'center' }}>
             About Andy Poulet
           </h1>
