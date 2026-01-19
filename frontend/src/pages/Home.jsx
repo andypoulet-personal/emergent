@@ -18,8 +18,7 @@ export default function Home() {
           <div className="hero-overlay"></div>
         </div>
         <div className="hero-content">
-          <h1 className="hero-title">{personalInfo.name}</h1>
-          <p className="body-large" style={{ color: 'var(--text-primary)', marginBottom: '24px', maxWidth: '30ch' }}>
+          <p className="body-large" style={{ color: 'var(--text-primary)', marginBottom: '24px', maxWidth: '40ch' }}>
             {personalInfo.tagline}
           </p>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
