@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Calendar, ArrowLeft, ExternalLink, Tag } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
@@ -14,9 +14,13 @@ export default function Newsletter() {
   const [selectedNewsletter, setSelectedNewsletter] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const { newsletterId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [newsletterId]);
+
+  useEffect(() => {
     fetchNewsletters();
   }, []);
 
@@ -24,6 +28,8 @@ export default function Newsletter() {
     if (newsletterId && newsletters.length > 0) {
       const newsletter = newsletters.find(n => n._id === newsletterId);
       setSelectedNewsletter(newsletter);
+    } else {
+      setSelectedNewsletter(null);
     }
   }, [newsletterId, newsletters]);
 
@@ -47,8 +53,13 @@ export default function Newsletter() {
     });
   };
 
+  const handleBackToList = () => {
+    navigate('/newsletter');
+    setSelectedNewsletter(null);
+  };
+
   if (selectedNewsletter) {
-    return <NewsletterDetail newsletter={selectedNewsletter} />;
+    return <NewsletterDetail newsletter={selectedNewsletter} onBack={handleBackToList} />;
   }
 
   return (
@@ -145,7 +156,7 @@ export default function Newsletter() {
   );
 }
 
-function NewsletterDetail({ newsletter }) {
+function NewsletterDetail({ newsletter, onBack }) {
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { 
@@ -159,10 +170,10 @@ function NewsletterDetail({ newsletter }) {
     <div className="newsletter-detail-page">
       <section className="newsletter-detail-hero">
         <div className="container">
-          <Link to="/newsletter" className="back-link">
+          <button onClick={onBack} className="back-link" style={{ cursor: 'pointer', background: 'none', border: 'none', padding: 0 }}>
             <ArrowLeft style={{ width: '20px', height: '20px', marginRight: '8px' }} />
             Back to All Newsletters
-          </Link>
+          </button>
           
           <div style={{ marginTop: '32px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px', color: 'var(--text-secondary)' }}>
@@ -209,11 +220,11 @@ function NewsletterDetail({ newsletter }) {
           </Card>
           
           <div style={{ textAlign: 'center', marginTop: '48px' }}>
-            <Link to="/newsletter">
+            <button onClick={onBack}>
               <Button className="btn-primary">
                 View All Newsletters
               </Button>
-            </Link>
+            </button>
           </div>
         </div>
       </section>
