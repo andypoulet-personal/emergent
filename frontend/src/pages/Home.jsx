@@ -7,21 +7,32 @@ import { Button } from '../components/ui/button';
 export default function Home() {
   return (
     <div className="home-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-background">
-          <img
-            src="https://images.unsplash.com/photo-1642522029691-029b5a432954?crop=entropy&cs=srgb&fm=jpg&q=85"
-            alt="Professional business collaboration"
-            className="hero-image"
-          />
-          <div className="hero-overlay"></div>
+      {/* Hero Section - Dynamic Multi-Image */}
+      <section className="hero-section hero-multi">
+        <div className="hero-split-grid">
+          <div className="hero-split-item">
+            <img src="https://images.unsplash.com/photo-1764510376693-3add7f0a3bb2?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Festival Energy" />
+            <div className="hero-split-overlay"></div>
+          </div>
+          <div className="hero-split-item">
+            <img src="https://images.unsplash.com/photo-1692902287779-e1c6f688f2da?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Cashless Payment Technology" />
+            <div className="hero-split-overlay"></div>
+          </div>
+          <div className="hero-split-item">
+            <img src="https://images.unsplash.com/photo-1730053225079-cd26d10e214d?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Sports Stadium" />
+            <div className="hero-split-overlay"></div>
+          </div>
+          <div className="hero-split-item">
+            <img src="https://images.unsplash.com/photo-1748584973216-241d3849b017?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Event Technology" />
+            <div className="hero-split-overlay"></div>
+          </div>
         </div>
-        <div className="hero-content">
-          <p className="body-large" style={{ color: 'var(--text-primary)', marginBottom: '24px', maxWidth: '40ch' }}>
+        <div className="hero-content-center">
+          <h1 className="hero-title-large">{personalInfo.name}</h1>
+          <p className="hero-subtitle">
             {personalInfo.tagline}
           </p>
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <div className="hero-buttons">
             <Link to="/contact">
               <Button className="btn-primary">Get In Touch</Button>
             </Link>
@@ -58,37 +69,7 @@ export default function Home() {
       {/* Companies Section */}
       <section className="companies-section">
         <div className="container">
-          {/* Banner showcasing services */}
-          <div className="companies-banner">
-            <div className="companies-banner-grid">
-              <div className="banner-image-item">
-                <img src="https://images.unsplash.com/photo-1568952433726-3896e3881c65?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Cashless Payment Technology" />
-                <div className="banner-overlay">
-                  <span className="banner-label">Cashless Payments</span>
-                </div>
-              </div>
-              <div className="banner-image-item">
-                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Event & Festival Management" />
-                <div className="banner-overlay">
-                  <span className="banner-label">Event Management</span>
-                </div>
-              </div>
-              <div className="banner-image-item">
-                <img src="https://images.unsplash.com/photo-1760037028485-d00dd2b8f6f0?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Sports Marketing" />
-                <div className="banner-overlay">
-                  <span className="banner-label">Sports Marketing</span>
-                </div>
-              </div>
-              <div className="banner-image-item">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Fan Engagement Technology" />
-                <div className="banner-overlay">
-                  <span className="banner-label">Fan Engagement</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <h2 className="heading-4" style={{ marginBottom: '48px', marginTop: '64px', textAlign: 'center', color: 'var(--text-primary)' }}>
+          <h2 className="heading-4" style={{ marginBottom: '48px', textAlign: 'center', color: 'var(--text-primary)' }}>
             Companies I Work With
           </h2>
           <div className="pixel-pushers-grid">

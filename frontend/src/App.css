@@ -306,57 +306,91 @@ body {
   color: var(--brand-primary);
 }
 
-/* Hero Section */
-.hero-section {
-  background: var(--bg-page);
+/* Hero Section - Multi-Image Grid */
+.hero-section.hero-multi {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  position: relative;
+  justify-content: center;
   padding: 120px 40px 80px;
   overflow: hidden;
 }
 
-.hero-background {
+.hero-split-grid {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.hero-split-item {
+  position: relative;
   overflow: hidden;
 }
 
-.hero-image {
-  object-fit: cover;
+.hero-split-item img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.hero-section.hero-multi:hover .hero-split-item img {
+  transform: scale(1.05);
+}
+
+.hero-split-overlay {
   position: absolute;
   inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
 }
 
-.hero-overlay {
-  opacity: 0.7;
-  background-image: linear-gradient(135deg, #000, transparent);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-}
-
-.hero-content {
+.hero-content-center {
   position: relative;
-  z-index: 1;
-  max-width: 700px;
+  z-index: 10;
+  text-align: center;
+  max-width: 900px;
+  padding: 40px;
+  background: rgba(45, 47, 46, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(16, 137, 62, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-.hero-title {
+.hero-title-large {
   font-family: 'Inter', Arial, sans-serif;
   font-weight: 900;
-  font-size: clamp(3rem, 2.5rem + 2vw, 5rem);
-  line-height: 0.9;
-  color: var(--text-primary);
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.1;
+  color: var(--brand-primary);
   text-transform: uppercase;
   margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.5;
+  color: #ffffff;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* Intro Section */
@@ -374,69 +408,6 @@ body {
 .companies-section {
   padding: 96px 40px;
   background: var(--bg-page);
-}
-
-/* Companies Banner */
-.companies-banner {
-  margin-bottom: 48px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-.companies-banner-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  min-height: 300px;
-}
-
-.banner-image-item {
-  position: relative;
-  overflow: hidden;
-  min-height: 300px;
-  transition: transform 0.3s ease;
-}
-
-.banner-image-item:hover {
-  transform: scale(1.02);
-  z-index: 1;
-}
-
-.banner-image-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.banner-image-item:hover img {
-  transform: scale(1.1);
-}
-
-.banner-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-  padding: 24px 20px;
-  display: flex;
-  align-items: flex-end;
-  transition: padding 0.3s ease;
-}
-
-.banner-image-item:hover .banner-overlay {
-  padding: 32px 20px;
-}
-
-.banner-label {
-  color: var(--brand-primary);
-  font-family: 'Inter', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .company-card {
@@ -831,6 +802,14 @@ body {
     min-height: 80vh;
   }
   
+  .hero-split-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero-content-center {
+    padding: 24px;
+  }
+  
   .container {
     padding: 0 20px;
   }
@@ -862,15 +841,5 @@ body {
   .btn-secondary {
     width: 100%;
     min-height: 52px;
-  }
-  
-  /* Banner responsive */
-  .companies-banner-grid {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  
-  .banner-image-item {
-    min-height: 200px;
   }
 }
