@@ -119,6 +119,75 @@ async def create_newsletter(newsletter: NewsletterCreate):
     await db.newsletters.insert_one(doc)
     return newsletter_obj
 
+# Contact form endpoint
+@api_router.post("/contact")
+async def submit_contact_form(name: str, email: str, company: str = "", message: str = ""):
+    """Handle contact form submission"""
+    from datetime import datetime
+    from fastapi import HTTPException
+    import smtplib
+    from email.mime.text import MIMEText
+    from email.mime.multipart import MIMEMultipart
+    
+    # Store in database
+    contact_submission = {
+        "_id": str(uuid.uuid4()),
+        "name": name,
+        "email": email,
+        "company": company,
+        "message": message,
+        "submitted_at": datetime.now(timezone.utc).isoformat()
+    }
+    await db.contact_submissions.insert_one(contact_submission)
+    
+    # Send email notification
+    try:
+        # Email configuration - using environment variables
+        smtp_server = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
+        smtp_port = int(os.environ.get('SMTP_PORT', '587'))
+        smtp_user = os.environ.get('SMTP_USER', '')
+        smtp_password = os.environ.get('SMTP_PASSWORD', '')
+        recipient_email = os.environ.get('CONTACT_EMAIL', 'andy@ultimate4all.com')
+        
+        # Create email
+        msg = MIMEMultipart()
+        msg['From'] = smtp_user if smtp_user else 'noreply@andypoulet.com'
+        msg['To'] = recipient_email
+        msg['Subject'] = f"New Contact Form Submission from {name}"
+        
+        body = f"""
+New contact form submission from your website:
+
+Name: {name}
+Email: {email}
+Company: {company if company else 'Not provided'}
+
+Message:
+{message}
+
+---
+Submitted at: {contact_submission['submitted_at']}
+        """
+        
+        msg.attach(MIMEText(body, 'plain'))
+        
+        # Send email if SMTP is configured
+        if smtp_user and smtp_password:
+            server = smtplib.SMTP(smtp_server, smtp_port)
+            server.starttls()
+            server.login(smtp_user, smtp_password)
+            server.send_message(msg)
+            server.quit()
+            logger.info(f"Contact form email sent to {recipient_email}")
+        else:
+            logger.warning("SMTP not configured - email not sent, but stored in database")
+            
+    except Exception as e:
+        logger.error(f"Error sending email: {e}")
+        # Don't fail the request if email fails
+    
+    return {"status": "success", "message": "Your message has been received. We'll get back to you soon!"}
+
 # Include the router in the main app
 app.include_router(api_router)
 

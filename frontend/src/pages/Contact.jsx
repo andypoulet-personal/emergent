@@ -30,15 +30,29 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Mock submission - will be replaced with actual API call
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
+    try {
+      const response = await axios.post(`${API}/contact`, {
+        name: formData.name,
+        email: formData.email,
+        company: formData.company,
+        message: formData.message
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      console.log('Form submitted successfully:', response.data);
       setIsSubmitting(false);
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', company: '', message: '' });
       
       setTimeout(() => setSubmitSuccess(false), 5000);
-    }, 1000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setIsSubmitting(false);
+      alert('There was an error sending your message. Please try again or email directly.');
+    }
   };
 
   return (
