@@ -37,6 +37,26 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+# Newsletter Models
+class Newsletter(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+    
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()), alias="_id")
+    title: str
+    preview_text: str
+    full_content: str
+    linkedin_url: str
+    publish_date: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    author_name: str = "Andy Poulet"
+    tags: List[str] = Field(default_factory=list)
+
+class NewsletterCreate(BaseModel):
+    title: str
+    preview_text: str
+    full_content: str
+    linkedin_url: str
+    tags: List[str] = Field(default_factory=list)
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
@@ -65,6 +85,37 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+# Newsletter endpoints
+@api_router.get("/newsletters")
+async def get_newsletters(limit: int = 10, skip: int = 0):
+    """Get all newsletters with pagination"""
+    newsletters = await db.newsletters.find().sort("publish_date", -1).skip(skip).limit(limit).to_list(None)
+    total = await db.newsletters.count_documents({})
+    return {
+        "newsletters": newsletters,
+        "total": total,
+        "skip": skip,
+        "limit": limit
+    }
+
+@api_router.get("/newsletters/{newsletter_id}")
+async def get_newsletter(newsletter_id: str):
+    """Get a specific newsletter by ID"""
+    newsletter = await db.newsletters.find_one({"_id": newsletter_id})
+    if not newsletter:
+        from fastapi import HTTPException
+        raise HTTPException(status_code=404, detail="Newsletter not found")
+    return newsletter
+
+@api_router.post("/newsletters", response_model=Newsletter)
+async def create_newsletter(newsletter: NewsletterCreate):
+    """Create a new newsletter (admin only - add auth later)"""
+    newsletter_obj = Newsletter(**newsletter.model_dump())
+    doc = newsletter_obj.model_dump(by_alias=True)
+    doc['publish_date'] = doc['publish_date'].isoformat()
+    await db.newsletters.insert_one(doc)
+    return newsletter_obj
 
 # Include the router in the main app
 app.include_router(api_router)
