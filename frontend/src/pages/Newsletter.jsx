@@ -68,17 +68,17 @@ export default function Newsletter() {
       <section className="newsletter-hero">
         <div className="newsletter-hero-background">
           <img 
-            src="https://images.unsplash.com/photo-1551434678-e076c223a692?crop=entropy&cs=srgb&fm=jpg&q=85" 
-            alt="Newsletter" 
+            src="https://images.unsplash.com/photo-1506157786151-b8491531f063?crop=entropy&cs=srgb&fm=jpg&q=85" 
+            alt="Music Festival" 
             className="hero-image"
           />
           <div className="hero-overlay"></div>
         </div>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <h1 className="heading-2" style={{ color: 'var(--text-primary)', marginBottom: '16px' }}>
+          <h1 className="heading-2" style={{ color: 'var(--text-primary)', marginBottom: '16px', textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8)' }}>
             Newsletter
           </h1>
-          <p className="body-large" style={{ color: '#ffffff', maxWidth: '60ch' }}>
+          <p className="body-large" style={{ color: '#ffffff', maxWidth: '60ch', textShadow: '2px 2px 6px rgba(0, 0, 0, 0.9)' }}>
             Weekly insights on festivals, live events, and the technologies shaping the entertainment industry
           </p>
         </div>
