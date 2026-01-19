@@ -29,7 +29,7 @@ export const personalInfo = {
   },
   linkedIn: "https://www.linkedin.com/in/andypoulet/",
   email: "contact@andypoulet.com",
-  calendlyUrl: "https://calendly.com/andypoulet"
+  calendlyUrl: "https://calendly.com/andy-ultimate4all/30min"
 };
 
 export const recommendations = [
@@ -415,7 +415,7 @@ export const companies = [
 ];
 
 export const contactInfo = {
-  calendlyUrl: "https://calendly.com/andypoulet",
+  calendlyUrl: "https://calendly.com/andy-ultimate4all/30min",
   formFields: [
     { name: "name", label: "Full Name", type: "text", required: true },
     { name: "email", label: "Email Address", type: "email", required: true },
