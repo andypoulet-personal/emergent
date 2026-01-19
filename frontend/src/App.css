@@ -782,6 +782,128 @@ body {
   min-height: 700px;
 }
 
+/* About Page */
+.about-page {
+  padding-top: 80px;
+}
+
+.about-hero {
+  padding: 80px 40px 60px;
+  background: var(--bg-page);
+  text-align: center;
+}
+
+.about-summary {
+  padding: 80px 40px;
+  background: var(--bg-page);
+}
+
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.philosophy-card {
+  background: var(--bg-card);
+  padding: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  margin-top: 32px;
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+}
+
+.expertise-section {
+  padding: 80px 40px;
+  background: var(--bg-page);
+}
+
+.expertise-area {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.expertise-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+
+/* Recommendations Section */
+.recommendations-section,
+.home-recommendations-section {
+  padding: 80px 40px;
+  background: var(--bg-page);
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 32px;
+}
+
+.recommendation-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.recommendation-header {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.recommendation-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--brand-primary);
+  flex-shrink: 0;
+}
+
+.recommendation-info {
+  flex: 1;
+}
+
+.read-more-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 16px;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+
+.read-more-link:hover {
+  gap: 12px;
+}
+
 /* Responsive Design */
 @media (max-width: 767px) {
   .desktop-nav {
@@ -820,7 +942,11 @@ body {
   .features-section,
   .industries-section,
   .testimonials-section,
-  .cta-section {
+  .cta-section,
+  .about-summary,
+  .expertise-section,
+  .recommendations-section,
+  .home-recommendations-section {
     padding: 64px 20px;
   }
   
@@ -841,5 +967,14 @@ body {
   .btn-secondary {
     width: 100%;
     min-height: 52px;
+  }
+  
+  .about-content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .recommendations-grid {
+    grid-template-columns: 1fr;
   }
 }
